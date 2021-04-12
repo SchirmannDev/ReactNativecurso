@@ -17,13 +17,9 @@ const Input = styled.TextInput`
 const Title = () => {
   const [name, setName] = useState("Cíntia Schirmann");
 
-  function changeText(text) {
-    setName(text);
-  }
-
   return (
     <View>
-      <Input value={name} onChangeText={changeText} />
+      <Input value={name} onChangeText={(t) => setName(t)} />
       <Text>Ola {name}</Text>
     </View>
   );
