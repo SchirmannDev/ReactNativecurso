@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text } from "react-native";
+import { View, Text } from "react-native";
 import styled from "styled-components/native";
 
 const Container = styled.SafeAreaView`
@@ -8,16 +8,31 @@ const Container = styled.SafeAreaView`
   align-items: center;
 `;
 
-const Title = (props) => {
+const Input = styled.TextInput`
+  width: 200px;
+  height: 40px;
+  border: 1px solid red;
+`;
+
+const Title = () => {
   const [name, setName] = useState("Cíntia Schirmann");
 
-  return <Text>Nome: {name}</Text>;
+  function changeText(text) {
+    setName(text);
+  }
+
+  return (
+    <View>
+      <Input value={name} onChangeText={changeText} />
+      <Text>Ola {name}</Text>
+    </View>
+  );
 };
 
 export default () => {
   return (
     <Container>
-      <Title phrase="Seja bem vindo(a)" />
+      <Title />
     </Container>
   );
 };
