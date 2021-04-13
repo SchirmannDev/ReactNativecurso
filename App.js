@@ -29,7 +29,11 @@ const Title = () => {
   const [show, setShow] = useState(false);
 
   const handleClick = () => {
-    setShow(true);
+    if (show == true) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
   };
 
   return (
