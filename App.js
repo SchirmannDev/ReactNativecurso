@@ -26,6 +26,7 @@ const Square = styled.View`
 const Title = () => {
   const [name, setName] = useState("Cíntia Schirmann");
   const [backupName, setBackupName] = useState("");
+  const [show, setShow] = useState(false);
 
   const handleClick = () => {
     setBackupName(name);
