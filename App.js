@@ -14,6 +14,15 @@ const Input = styled.TextInput`
   border: 1px solid red;
 `;
 
+const Square = styled.View`
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  border: 3px dashed #000;
+  margin-top: 30px;
+`;
+
 const Title = () => {
   const [name, setName] = useState("Cíntia Schirmann");
   const [backupName, setBackupName] = useState("");
@@ -25,8 +34,12 @@ const Title = () => {
   return (
     <View>
       <Input value={name} onChangeText={(t) => setName(t)} />
+
       <Button title="Trocar o nome" onPress={handleClick} />
-      <Text>{backupName}</Text>
+
+      <Square>
+        <Text>Texto</Text>
+      </Square>
     </View>
   );
 };
