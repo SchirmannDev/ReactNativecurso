@@ -38,9 +38,11 @@ const Title = () => {
 
       <Button title="Trocar o nome" onPress={handleClick} />
 
-      <Square>
-        <Text>Texto</Text>
-      </Square>
+      {show && (
+        <Square>
+          <Text>Texto</Text>
+        </Square>
+      )}
     </View>
   );
 };
