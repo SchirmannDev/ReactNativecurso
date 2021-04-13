@@ -29,7 +29,7 @@ const Title = () => {
   const [show, setShow] = useState(false);
 
   const handleClick = () => {
-    setBackupName(name);
+    setShow(true);
   };
 
   return (
@@ -40,7 +40,8 @@ const Title = () => {
 
       {show && (
         <Square>
-          <Text>Texto</Text>
+          <Text>Seu nome é :</Text>
+          <Text>{name}</Text>
         </Square>
       )}
     </View>
