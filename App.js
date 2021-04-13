@@ -40,7 +40,10 @@ const Title = () => {
     <View>
       <Input value={name} onChangeText={(t) => setName(t)} />
 
-      <Button title="Trocar o nome" onPress={handleClick} />
+      <Button
+        title={show ? "Ocultar nome" : "Mostrar nome"}
+        onPress={handleClick}
+      />
 
       {show && (
         <Square>
