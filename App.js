@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { Plataform, Platform } from "react-native";
 import { View, TextInput } from "react-native";
 import styled from "styled-components/native";
 
@@ -29,9 +30,11 @@ const Logo = styled.View`
 `;
 
 export default () => {
+  useEffect(() => {}, []);
+
   return (
     <Container>
-      <KeyboardArea>
+      <KeyboardArea behavior={Platform.OS == "ios" ? "padding" : null}>
         <Logo></Logo>
         <Input />
       </KeyboardArea>
