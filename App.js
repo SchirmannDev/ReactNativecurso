@@ -13,12 +13,13 @@ const Input = styled.TextInput`
   width: 90%;
   height: 50px;
   border: 1px solid blue;
+  border-radius: 35px;
 `;
 const KeyboardArea = styled.KeyboardAvoidingView`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #fff00f;
+  background-color: ${Platform.OS == "ios" ? "#f0358c" : "#ff009a"}
   width: 100%;
 `;
 
@@ -27,6 +28,7 @@ const Logo = styled.View`
   height: 100px;
   background-color: #000;
   margin-bottom: 20px;
+  border-radius: 60px;
 `;
 
 export default () => {
