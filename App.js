@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text } from "react-native";
 import styled from "styled-components/native";
 
 const Container = styled.SafeAreaView`
@@ -9,56 +9,25 @@ const Container = styled.SafeAreaView`
 `;
 
 const Input = styled.TextInput`
-  width: 200px;
-  height: 40px;
-  border: 1px solid red;
+  width: 90%;
+  height: 50px;
+  border: 1px solid blue;
 `;
 
-const Square = styled.View`
-  width: 200px;
-  height: 200px;
-  justify-content: center;
-  align-items: center;
-  border: 3px dashed #000;
-  margin-top: 30px;
+const Logo = styled.View`
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  margin-bottom: 20px;
 `;
 
-const Title = () => {
-  const [name, setName] = useState("Cíntia Schirmann");
-  const [backupName, setBackupName] = useState("");
-  const [show, setShow] = useState(false);
-
-  const handleClick = () => {
-    if (show == true) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
-  };
-
-  return (
-    <View>
-      <Input value={name} onChangeText={(t) => setName(t)} />
-
-      <Button
-        title={show ? "Ocultar nome" : "Mostrar nome"}
-        onPress={handleClick}
-      />
-
-      {show && (
-        <Square>
-          <Text>Seu nome é :</Text>
-          <Text>{name}</Text>
-        </Square>
-      )}
-    </View>
-  );
-};
+const KeyboardArea = styled.KeyboardAvoindingView``;
 
 export default () => {
   return (
     <Container>
-      <Title />
+      <Logo></Logo>
+      <Input />
     </Container>
   );
 };
