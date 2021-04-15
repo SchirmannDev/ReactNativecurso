@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View, TextInput } from "react-native";
 import styled from "styled-components/native";
 
 const Container = styled.SafeAreaView`
@@ -13,6 +13,13 @@ const Input = styled.TextInput`
   height: 50px;
   border: 1px solid blue;
 `;
+const KeyboardArea = styled.KeyboardAvoidingView`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff00f;
+  width: 100%;
+`;
 
 const Logo = styled.View`
   width: 100px;
@@ -21,13 +28,13 @@ const Logo = styled.View`
   margin-bottom: 20px;
 `;
 
-const KeyboardArea = styled.KeyboardAvoindingView``;
-
 export default () => {
   return (
     <Container>
-      <Logo></Logo>
-      <Input />
+      <KeyboardArea>
+        <Logo></Logo>
+        <Input />
+      </KeyboardArea>
     </Container>
   );
 };
