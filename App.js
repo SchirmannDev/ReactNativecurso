@@ -10,8 +10,8 @@ const Container = styled.SafeAreaView`
 
 export default () => {
   useEffect(() => {
-    let largura = Dimensions.get("window").width;
-    alert(largura);
+    let { width, height } = Dimensions.get("window");
+    alert(width + "x" + height);
   }, []);
 
   return <Container></Container>;
