@@ -1,17 +1,24 @@
 import React, { useEffect } from "react";
-import { Dimensions } from "react-native";
+import { Dimensions, Alert } from "react-native";
 import styled from "styled-components/native";
 
 const Container = styled.SafeAreaView`
   flex: 1;
   justify-content: center;
   align-items: center;
+  background-color: #ff009a;
 `;
 
 export default () => {
   useEffect(() => {
-    let { width, height } = Dimensions.get("window");
-    alert(width + "x" + height);
+    Alert.alert("NOTICE", "VERY IMPORTANT", [
+      { text: "I agree", onpress: () => console.log("Accepted") },
+      {
+        text: "I do not agree",
+        onPress: () => console.log("Not accept"),
+        style: "cancel",
+      },
+    ]);
   }, []);
 
   return <Container></Container>;
