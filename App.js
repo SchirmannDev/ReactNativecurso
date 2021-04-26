@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components/native";
 
+import Header from "./src/components/Header";
+
 const Container = styled.SafeAreaView`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #ff009a;
+  background-color: #16d2d4;
 `;
 
 export default () => {
-  return <Container></Container>;
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
 };
