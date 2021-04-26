@@ -12,7 +12,6 @@ const Header = styled.View`
 const HeaderText = styled.Text`
   color: white;
   font-weight: bold;
-  font-size: 25;
 `;
 
 export default () => {
