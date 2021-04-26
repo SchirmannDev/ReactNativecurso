@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 
 import Header from "./src/components/Header";
 
@@ -12,9 +12,16 @@ const Container = styled.SafeAreaView`
 `;
 
 export default () => {
+  const [status, setStatus] = useState("");
   return (
     <Container>
-      <Image source={require("./src/images/cintia.png")} style={styles.image} />
+      <Image
+        source={require("./src/images/cintia.png")}
+        style={styles.image}
+        onLoadStart={() => setStatus("Carregando")}
+      />
+
+      <Text>{status}</Text>
     </Container>
   );
 };
